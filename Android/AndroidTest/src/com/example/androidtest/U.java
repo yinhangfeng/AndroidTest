@@ -8,8 +8,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 public class U {
+	
+	public static void logTimeIntervalNano(long start, long end) {
+		Log.i("U", "time interval " + (end - start) + "ns" + " " + ((end - start) / 1000 / 1000) + "ms");
+	}
 	
 	/**
 	 * bitmap¥Û–°
