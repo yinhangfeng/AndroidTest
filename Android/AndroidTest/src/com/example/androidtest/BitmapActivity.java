@@ -1,5 +1,8 @@
 package com.example.androidtest;
 
+import javax.microedition.khronos.opengles.GL10;
+
+import android.opengl.GLES10;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -27,6 +30,7 @@ public class BitmapActivity extends Activity implements OnClickListener {
 		findViewById(R.id.bitmap_loop_set_small).setOnClickListener(this);
 		findViewById(R.id.bitmap_loop_set_big).setOnClickListener(this);
 		findViewById(R.id.bitmap_recycle).setOnClickListener(this);
+		findViewById(R.id.bitmap_max_size).setOnClickListener(this);
 		imageView = (ImageView) findViewById(R.id.image_view);
 		
 		big = U.getBitmapFromResources(this, R.drawable.testl1);
@@ -85,6 +89,11 @@ public class BitmapActivity extends Activity implements OnClickListener {
 			small.recycle();
 			big.recycle();
 			imageView.invalidate();
+			break;
+		case R.id.bitmap_max_size:
+			int[] maxTextureSize = new int[1];
+			GLES10.glGetIntegerv(GL10.GL_MAX_TEXTURE_SIZE, maxTextureSize, 0);
+			L.i("bitmap_max_size", maxTextureSize[0]);
 			break;
 		}
 		

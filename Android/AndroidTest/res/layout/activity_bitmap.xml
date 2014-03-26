@@ -30,6 +30,12 @@
         android:layout_height="wrap_content"
         android:text="bitmap recycle" />
     
+    <Button
+        android:id="@+id/bitmap_max_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bitmap_max_size" />
+    
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
