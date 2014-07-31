@@ -3,7 +3,7 @@ package com.example.test;
 public class Test {
 
 	public static void main(String[] args) {
-		QSortTest.test();
+		ImplementsTest.test();
 		U.println("main end");
 	}
 }
